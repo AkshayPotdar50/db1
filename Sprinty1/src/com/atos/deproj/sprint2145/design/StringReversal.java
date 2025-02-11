@@ -1,7 +1,12 @@
 package com.atos.deproj.sprint2145.design;
 
 public class StringReversal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
+    	
+    	printFibonacci(10);
+
+        StringReversal object1=new StringReversal();
+        StringReversal object2= (StringReversal) object1.clone();
 
     }
 
@@ -22,4 +27,29 @@ public class StringReversal {
         }
         return new String(chars);
     }
+    
+    public static void printFibonacci(int N) {
+    	int num1=0;
+    	int num2=1;
+    	System.out.print(num1+" "+num2);
+    	 
+    	int i=2;
+    	while(i<=N) {
+    		i++;
+    		int temp= num1+num2;
+    		num1=num2;
+    		num2=temp;
+    		System.out.print(" "+num2);
+    	}
+    }
+
+
+    /*SELECT MAX(salary) AS SecondHighestSalary
+FROM Employee
+WHERE salary < (SELECT MAX(salary) FROM Employee);
+*/
+
+
+
+
 }
